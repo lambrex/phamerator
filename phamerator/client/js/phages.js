@@ -1450,7 +1450,7 @@ Template.phages.events({
                       //blastAlignmentsOutstanding = blastAlignmentsOutstanding - 1;
                       Meteor.call('updateSelectedData', element.phagename, false);
                       window.requestAnimationFrame(function () {
-                        //console.log("update_hsps 1088");
+                        console.log("update_hsps 1088");
                         update_hsps(hspData);
                       });
                       //update_hsps(hspData);
@@ -1562,7 +1562,7 @@ Template.phages.events({
     console.log(event.target.checked);
     setTimeout(function () { Session.set("showPhamLabels", event.target.checked) }, 200);
   },
-    "change #Phamabundancebutton": function (event, template) {
+    "change #phamAbundanceRadioButton": function (event, template) {
         event.preventDefault();
         console.log(event.target.checked);
         setTimeout(function () {
@@ -1574,7 +1574,7 @@ Template.phages.events({
             console.log("showphamcolor:",Session.get("showphamcolor"));
         }, 200);
     },
-    "change #GCbutton": function (event, template) {
+    "change #conservedDomainRadioButton": function (event, template) {
         event.preventDefault();
         console.log(event.target.checked);
         setTimeout(function () {
@@ -1587,7 +1587,7 @@ Template.phages.events({
             console.log("showphamcolor:", Session.get("showphamcolor"));
         }, 200);
     },
-    "change #Eastereggbutton": function (event, template) {
+    "change #phamColorRadioButton": function (event, template) {
         event.preventDefault();
         console.log(event.target.checked);
         setTimeout(function () {
@@ -1750,14 +1750,14 @@ Template.mapSettingsModal.helpers({
     'functionLabelsSwitchState': function () {
         return Session.get("showFunctionLabels");
     },
-    'phamabstate': function () {
-        return Session.get("showphamabcolor");
+    'phamAbundanceState': function () {
+        return Session.get("showPhamAbundance");
     },
-    'GCbuttonstate': function () {
-        return Session.get ("showgccolor");
+    'conservedDomainState': function () {
+        return Session.get ("showConservedDomains");
     },
-    'phamcolorstate': function () {
-        return Session.get ("showphamcolor");
+    'phamColorState': function () {
+        return Session.get ("showPhamColor");
     }
 
 });
